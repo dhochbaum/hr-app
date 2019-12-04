@@ -4,6 +4,7 @@ easy_admin:
         User:
             class: App\Entity\User
             form:
+                item_permission: 'ROLE_ADMIN'
                 #fields: ['fullName', 'username', 'email', 'firstName', 'middleName', 'lastName', 'division', 'position', 'isActive']
                 #fields: ['fullName', 'username', 'email', 'password', 'firstName', 'middleName', 'lastName', 'division', 'position', 'isActive']
                 fields: 
@@ -19,7 +20,8 @@ easy_admin:
                     - 'position'
                     - 'isActive'
                     # - { property: 'roles', type: 'choice', type_options: { choices:  { 'ROLE_USER': 'ROLE_USER' } } }
-                
+            list:
+                item_permission: 'ROLE_ADMIN'    
         # change the following to the namespaces of your own entities
         #- App\Entity\User
 
