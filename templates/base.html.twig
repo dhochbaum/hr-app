@@ -41,11 +41,11 @@
                             <ul class="nav navbar-nav navbar-right">
 
                                 {% block header_navigation_links %}
-                                    <li>
+                                    {# <li>
                                         <a href="{{ path('blog_index') }}">
                                             <i class="fa fa-home" aria-hidden="true"></i> {{ 'menu.homepage'|trans }}
                                         </a>
-                                    </li>
+                                    </li> #}
 
                                     {% if is_granted('ROLE_ADMIN') %}
                                         <li>
@@ -57,9 +57,9 @@
                                     {% endif %}
                                 {% endblock %}
 
-                                <li>
+                                {# <li>
                                     <a href="{{ path('blog_search') }}"> <i class="fa fa-search"></i> {{ 'menu.search'|trans }}</a>
-                                </li>
+                                </li> #}
 
                                 {% if app.user %}
                                     <li class="dropdown">
@@ -69,12 +69,12 @@
                                             <span class="sr-only">{{ app.user.fullname }}</span>
                                         </a>
                                         <ul class="dropdown-menu user" role="menu" aria-labelledby="user">
-                                            <li>
+                                            {# <li>
                                                 <a href="{{ path('user_edit') }}">
                                                     <i class="fa fa-edit" aria-hidden="true"></i> {{ 'menu.user'|trans }}
                                                 </a>
-                                            </li>
-                                            <li class="divider"></li>
+                                            </li> 
+                                            <li class="divider"></li>#}
                                             <li>
                                                 <a href="{{ path('security_logout') }}">
                                                     <i class="fa fa-sign-out" aria-hidden="true"></i> {{ 'menu.logout'|trans }}
@@ -84,7 +84,7 @@
                                     </li>
                                 {% endif %}
 
-                                <li class="dropdown">
+                                {# <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="locales">
                                         <i class="fa fa-globe" aria-hidden="true"></i>
                                         <span class="caret"></span>
@@ -95,7 +95,7 @@
                                             <li {% if app.request.locale == locale.code %}aria-checked="true" class="active"{% else %}aria-checked="false"{% endif %} role="menuitem"><a href="{{ path(app.request.get('_route', 'blog_index'), app.request.get('_route_params', [])|merge({_locale: locale.code})) }}">{{ locale.name|capitalize }} <small>{{ locale.code[0:2] }}</small></a></li>
                                         {% endfor %}
                                     </ul>
-                                </li>
+                                </li> #}
                             </ul>
                         </div>
                     </div>

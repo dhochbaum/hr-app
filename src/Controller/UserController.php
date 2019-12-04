@@ -35,23 +35,25 @@ class UserController extends AbstractController
      */
     public function edit(Request $request): Response
     {
-        $user = $this->getUser();
 
-        $form = $this->createForm(UserType::class, $user);
-        $form->handleRequest($request);
+        // Commented out because we don't want users to be able to edit themselves
+        // $user = $this->getUser();
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+        // $form = $this->createForm(UserType::class, $user);
+        // $form->handleRequest($request);
 
-            $this->addFlash('success', 'user.updated_successfully');
+        // if ($form->isSubmitted() && $form->isValid()) {
+        //     $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('user_edit');
-        }
+        //     $this->addFlash('success', 'user.updated_successfully');
 
-        return $this->render('user/edit.html.twig', [
-            'user' => $user,
-            'form' => $form->createView(),
-        ]);
+        //     return $this->redirectToRoute('user_edit');
+        // }
+
+        // return $this->render('user/edit.html.twig', [
+        //     'user' => $user,
+        //     'form' => $form->createView(),
+        // ]);
     }
 
     /**

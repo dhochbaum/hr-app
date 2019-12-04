@@ -9,12 +9,8 @@ use App\Entity\User;
 
 class AdminController extends EasyAdminController
 {
-    // Customizes the instantiation of entities only for the 'User' entity
-    public function createNewUserEntity()
-    {
-        return new User(array('ROLE_USER'));
-    }
     
+
     protected function prePersistUserEntity(User $user)
     {
         $encodedPassword = $this->encodePassword($user, $user->getPassword());
