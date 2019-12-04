@@ -1,9 +1,16 @@
 # config/packages/easy_admin.yaml
 easy_admin:
     entities:
+        User:
+            class: App\Entity\User
+            form:
+                #fields: ['fullName', 'username', 'email', 'firstName', 'middleName', 'lastName', 'division', 'position', 'isActive']
+                fields: ['fullName', 'username', 'email', 'password', 'firstName', 'middleName', 'lastName', 'division', 'position', 'isActive']
         # change the following to the namespaces of your own entities
-        - App\Entity\User
+        #- App\Entity\User
+
     user:
         # this method/property must return the string representation of the user
         # (Symfony will look for getFullName(), isFullName(), ..., and 'fullName' property)
         name_property_path: 'fullName'
+

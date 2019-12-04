@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'user_view' %}
+
+{% block main %}
+    <h1>User Information</h1>
+    <table>
+        <tr>
+            <td>Full Name</td><td>{{user.fullName}}</td>
+        </tr>
+        <tr>
+            <td>Email</td><td>{{user.email}}</td>
+        </tr>
+        <tr>
+            <td>Username</td><td>{{user.username}}</td>
+        </tr>
+        <tr>
+            <td>Roles</td><td>{{user.roles[0]}}</td>
+        </tr>
+        <tr>
+            <td>First Name</td><td>{{user.firstName}}</td>
+        </tr>
+        <tr>
+            <td>Middle Name</td><td>{{user.middleName}}</td>
+        </tr>
+        <tr>
+            <td>Last Name</td><td>{{user.lastName}}</td>
+        </tr>
+        <tr>
+            <td>Division</td><td>{{user.division}}</td>
+        </tr>
+        <tr>
+            <td>Position</td><td>{{user.position}}</td>
+        </tr>
+    </table>
+    
+    
+    {# {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+        <button type="submit" class="btn btn-primary">
+            <i class="fa fa-save" aria-hidden="true"></i> {{ 'action.save'|trans }}
+        </button>
+    {{ form_end(form) }} #}
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section">
+        <a href="{{ path('user_change_password') }}" class="btn btn-lg btn-block btn-danger">
+            <i class="fa fa-lock" aria-hidden="true"></i> {{ 'action.change_password'|trans }}
+        </a>
+    </div>
+
+    {# {{ parent() }}
+
+    {{ show_source_code(_self) }} #}
+{% endblock %}

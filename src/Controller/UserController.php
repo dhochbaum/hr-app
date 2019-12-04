@@ -76,4 +76,28 @@ class UserController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/view", methods={"GET", "POST"}, name="user_view")
+     */
+    public function view(Request $request): Response
+    {
+        $user = $this->getUser();
+
+        $form = $this->createForm(UserType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash('success', 'user.updated_successfully');
+
+            return $this->redirectToRoute('user_edit');
+        }
+
+        return $this->render('user/view.html.twig', [
+            'user' => $user,
+            // 'form' => $form->createView(),
+        ]);
+    }
 }
