@@ -5,7 +5,21 @@ easy_admin:
             class: App\Entity\User
             form:
                 #fields: ['fullName', 'username', 'email', 'firstName', 'middleName', 'lastName', 'division', 'position', 'isActive']
-                fields: ['fullName', 'username', 'email', 'password', 'firstName', 'middleName', 'lastName', 'division', 'position', 'isActive']
+                #fields: ['fullName', 'username', 'email', 'password', 'firstName', 'middleName', 'lastName', 'division', 'position', 'isActive']
+                fields: 
+                    - 'fullName'
+                    - 'username'
+                    - 'email'
+                    # - 'password'
+                    - { property: 'password', type: 'password' }
+                    - 'firstName'
+                    - 'middleName'
+                    - 'lastName'
+                    - 'division'
+                    - 'position'
+                    - 'isActive'
+                    # - { property: 'roles', type: 'choice', type_options: { choices:  { 'ROLE_USER': 'ROLE_USER' } } }
+                
         # change the following to the namespaces of your own entities
         #- App\Entity\User
 
