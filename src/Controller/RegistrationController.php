@@ -21,6 +21,12 @@ class RegistrationController extends AbstractController
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
+        // if ($form->isSubmitted()) {
+
+        //     exit(\Doctrine\Common\Util\Debug::dump($user));
+
+        // }
+
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
             $user->setPassword(
@@ -29,6 +35,8 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
+
+            // exit(\Doctrine\Common\Util\Debug::dump($user));
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
