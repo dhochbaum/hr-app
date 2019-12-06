@@ -30,3 +30,30 @@ easy_admin:
         # (Symfony will look for getFullName(), isFullName(), ..., and 'fullName' property)
         name_property_path: 'fullName'
 
+    list:
+        # expanded configuration format
+        actions:
+            - { name: 'edit', label: 'Edit' }
+            - { name: 'new', label: 'Create New' }
+            - { name: 'delete', label: 'Delete' }
+            - { name: 'search', label: 'Search' }
+        title: 'Users Admin'
+    
+    edit:
+        title: 'Users Admin | Edit User'
+        actions:
+            - { name: 'delete', label: 'Delete' }
+            - { name: 'list', label: 'Back to List' }
+    
+    search: 
+        title: 'Users Admin | Search Results'
+    
+    design:
+        templates:
+            label_null: 'admin/label_null.html.twig'
+            paginator: 'admin/paginator.html.twig'
+    
+    site_name: '<img src="https://www1.nyc.gov/assets/planning/images/content/header/logo.png" height="60px" width="69px" />'
+
+
+
