@@ -12,7 +12,7 @@ easy_admin:
                     - 'username'
                     - 'email'
                     # - 'password'
-                    - { property: 'password', type: 'password' }
+                    #- { property: 'password', type: 'password' }
                     - 'firstName'
                     - 'middleName'
                     - 'lastName'
