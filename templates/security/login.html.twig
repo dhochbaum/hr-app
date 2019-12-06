@@ -39,7 +39,7 @@
         </div>
 
         <div id="login-help" class="col-sm-7">
-            <h3>
+            {# <h3>
                 <i class="hidden-xs fa fa-long-arrow-left" aria-hidden="true"></i>
                 {{ 'help.login_users'|trans }}
             </h3>
@@ -82,13 +82,14 @@
                         <code class="console">$ php bin/console app:add-user</code>
                     </p>
                 </div>
-            </div>
+            </div> #}
         </div>
     </div>
 {% endblock %}
 
-{% block sidebar %}
-    {{ parent() }}
+ {% block sidebar %}
+{#    {{ parent() }}
 
     {{ show_source_code(_self) }}
-{% endblock %}
+    #}
+{% endblock %} 
